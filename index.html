@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aludra Engenharia | Energia Elétrica e Solar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <img src="img/logo.png" alt="Aludra Engenharia" class="logo">
+
+        <nav class="menu">
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#clientes">Clientes</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero animate">
+        <h1>Solução para o seu problema em Energia Elétrica</h1>
+        <p>Especializada em Energia Solar e Elétrica Residencial</p>
+        <a href="#contato" class="btn">Solicitar Orçamento</a>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section animate">
+        <h2>Quem Somos</h2>
+        <p>
+            A Aludra Engenharia atua no desenvolvimento de soluções em energia elétrica,
+            unindo conhecimento técnico, planejamento e inovação.
+            Somos especializados em energia solar e instalações elétricas residenciais,
+            oferecendo projetos seguros, eficientes e alinhados às normas técnicas.
+            Nosso compromisso é transformar ideias e necessidades em soluções inteligentes,
+            entregando qualidade, confiabilidade e resultados duradouros.
+        </p>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section bg-light animate">
+        <h2>Nossos Serviços</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>☀️ Energia Solar</h3>
+                <p>Projetos e instalação de sistemas fotovoltaicos.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Elétrica Residencial</h3>
+                <p>Instalações elétricas seguras e normatizadas.</p>
+            </div>
+
+            <div class="card">
+                <h3>📐 Projetos Elétricos</h3>
+                <p>Planejamento técnico com foco em eficiência.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section id="clientes" class="section bg-light animate">
+    <h2>Nossos Clientes</h2>
+
+    <div class="clientes-wrapper">
+        <button class="arrow left" onclick="moveClientes(-1)">&#10094;</button>
+
+        <div class="clientes-container">
+            <div class="cliente-card">
+                <img src="img/clientes/cliente1.png" alt="Cliente 1">
+            </div>
+            <div class="cliente-card">
+                <img src="img/clientes/cliente2.png" alt="Cliente 2">
+            </div>
+            <div class="cliente-card">
+                <img src="img/clientes/cliente3.png" alt="Cliente 3">
+            </div>
+            <div class="cliente-card">
+                <img src="img/clientes/cliente4.png" alt="Cliente 4">
+            </div>
+            <div class="cliente-card">
+                <img src="img/clientes/cliente5.png" alt="Cliente 5">
+            </div>
+            <div class="cliente-card">
+                <img src="img/clientes/cliente6.png" alt="Cliente 6">
+            </div>
+            <div class="cliente-card">
+                <img src="img/clientes/cliente7.png" alt="Cliente 7">
+            </div>
+        </div>
+
+        <button class="arrow right" onclick="moveClientes(1)">&#10095;</button>
+    </div>
+</section>
+
+
+    <!-- CONTATO -->
+    <section id="contato" class="section contato animate">
+        <h2>Entre em Contato</h2>
+        <p>
+            Tem um projeto ou busca melhorar sua instalação elétrica?
+            Fale conosco e viabilize sua solução com engenharia especializada.
+        </p>
+
+        <button onclick="abrirWhatsApp()" class="btn whatsapp">
+            Falar no WhatsApp
+        </button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 - Aludra Engenharia • Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
