@@ -1,16 +1,21 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BASE */
+/* ================= BASE ================= */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    color: #1e1e1e;
+    color: #1a1a1a;
     background-color: #ffffff;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 /* ================= HEADER ================= */
@@ -19,30 +24,57 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background-color: #0b1c2d;
+    background: rgba(11, 28, 45, 0.95);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .logo {
-    height: 100px;
+    height: 75px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
 }
 
 .menu a {
     color: #ffffff;
-    margin-left: 25px;
+    margin-left: 28px;
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.3s ease;
-    font-size: 20px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+    position: relative;
 }
 
-.menu a:hover {
-    opacity: 0.8;
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #e50914;
+    transition: 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
 }
 
 /* ================= HERO ================= */
 .hero {
-    min-height: 85vh;
-    background: linear-gradient(to right, #0b1c2d, #142f4f);
+    min-height: 90vh;
+    background: linear-gradient(
+        rgba(11, 28, 45, 0.85),
+        rgba(11, 28, 45, 0.85)
+    ),
+    url('img/hero-eletrica.jpg') center/cover no-repeat;
     color: white;
     display: flex;
     flex-direction: column;
@@ -52,111 +84,225 @@ body {
 
 .hero h1 {
     font-size: 3rem;
-    max-width: 720px;
+    max-width: 800px;
+    font-weight: 700;
+    margin-bottom: 25px;
 }
 
 .hero p {
-    margin: 15px 0 30px;
     font-size: 1.2rem;
     max-width: 600px;
-    
+    margin-bottom: 35px;
+    opacity: 0.95;
 }
 
 /* ================= BOTÕES ================= */
 .btn {
     display: inline-block;
-    padding: 14px 28px;
-    background-color: #e50914;
+    padding: 15px 32px;
+    background: linear-gradient(45deg, #e50914, #ff2e2e);
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 40px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.3);
 }
 
 .btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(229, 9, 20, 0.4);
 }
 
 .whatsapp {
-    margin-top: 20px;
-    background-color: #25d366;
+    background: linear-gradient(45deg, #1ebe5d, #25d366);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
 }
 
 /* ================= SEÇÕES ================= */
 .section {
-    padding: 80px 8%;
-    
+    padding: 110px 8%;
 }
 
 .section h2 {
-    font-size: 2.6rem; /* títulos mais fortes */
-    margin-bottom: 25px;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
 }
 
-
-
 .section p {
-    max-width: 800px;
+    max-width: 850px;
+    margin: 0 auto 20px auto;
+    text-align: center;
 }
 
 .bg-light {
-    background-color: #f4f6f8;
+    background-color: #f8f9fb;
 }
 
 /* ================= CARDS ================= */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-    
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
 }
 
 .card {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card h3 {
-    margin-bottom: 10px;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    text-align: center;
+    border: 1px solid #f1f1f1;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+}
+
+/* ================= PROJETOS ================= */
+#projetos .card {
+    padding: 0;
+    overflow: hidden;
+}
+
+#projetos img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+#projetos .card p {
+    padding: 20px;
+}
+
+/* ================= CLIENTES ================= */
+.clientes-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.clientes-container {
+    display: flex;
+    gap: 50px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    max-width: 1100px;
+    scrollbar-width: none;
+}
+
+.clientes-container::-webkit-scrollbar {
+    display: none;
+}
+
+.cliente-card {
+    flex: 0 0 220px;
+    height: 220px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.cliente-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ================= SETAS ================= */
+.arrow {
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.arrow:hover {
+    background: #0b1c2d;
+    color: white;
 }
 
 /* ================= CONTATO ================= */
 .contato {
     text-align: center;
 }
-#contato p{
-    margin: 0 auto;
-    text-align: center;
-    font-size: 22px;
+
+.contato p {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
 }
 
-/* ================= FOOTER ================= */
+/* ================= FOOTER PREMIUM ================= */
 .footer {
-    background-color: #0b1c2d;
+    background: #0b1c2d;
     color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 0.9rem;
+    padding: 60px 8% 30px;
 }
 
-/* ================= ANIMAÇÕES (SCROLL) ================= */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-brand h3 {
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    opacity: 0.8;
+    max-width: 400px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: #142f4f;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #e50914;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ================= ANIMAÇÕES ================= */
 .animate {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+    transform: translateY(50px);
+    transition: all 1s ease;
 }
 
 .animate.active {
@@ -164,179 +310,51 @@ body {
     transform: translateY(0);
 }
 
-/* ================= CLIENTES CARROSSEL ================= */
-
-.clientes-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.clientes-container {
-    display: flex;
-    gap: 40px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    max-width: 1000px;
-}
-
-
-.cliente-card {
-    flex: 0 0 200px;
-    height: 200px;
-    background-color: white;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-}
-
-.cliente-card img {
-    max-width: 100%;
-    max-height: 100%;
-    transition: 0.3s ease;
-}
-
-.cliente-card:hover img {
-    transform: scale(1.05);
-}
-.clientes-container::-webkit-scrollbar {
-    display: none;
-}
-
-.clientes-container {
-    scrollbar-width: none;
-}
-
-
-/* ================= SETAS ================= */
-
-.arrow {
-    color: #000000;
-    border: none;
-    font-size: 28px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.arrow:hover {
-    background-color: #142f4f;
-    transform: scale(1.1);
-}
-
-.arrow.left {
-    margin-right: 20px;
-}
-
-.arrow.right {
-    
-    margin-left: 20px;
-}
-
 /* ================= RESPONSIVO ================= */
-
 @media (max-width: 768px) {
-    .clientes-container {
-        gap: 20px;
+
+    .hero h1 {
+        font-size: 2rem;
     }
 
-    .cliente-card {
-        flex: 0 0 160px;
-        height: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    .clientes-wrapper {
-        flex-direction: row;
-    }
-
-    .arrow {
-        margin: 15px 0;
-    }
-
-    .clientes-container {
-        max-width: 100%;
-    }
-}
-
-
-/* Animação */
-@keyframes scrollClientes {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .clientes-track img {
-        height: 60px;
-    }
-}
-
-/* ================= RESPONSIVIDADE ================= */
-
-/* Tablets */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .menu a {
-        margin: 0 10px;
-    }
-
-    .hero {
-        min-height: auto;
+    .section {
         padding: 80px 6%;
     }
 
-    .hero h1 {
-        font-size: 2.2rem;
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
     }
 
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .section {
-        padding: 70px 6%;
-    }
-
-    .section h2 {
-        font-size: 2rem;
+    .arrow {
+        display: none;
     }
 }
 
-/* Celulares */
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.9rem;
-    }
+/* ================= CONTATO AÇÕES ================= */
 
-    .section {
-        padding: 60px 6%;
-    }
-
-    .section h2 {
-        font-size: 1.7rem;
-    }
-
-    .btn {
-        padding: 12px 22px;
-        font-size: 0.9rem;
-    }
+.contato-acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
 }
+
+.instagram-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.instagram-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
